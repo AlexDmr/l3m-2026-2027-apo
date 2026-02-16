@@ -21,16 +21,16 @@ Supposons qu'on veuille développer un compte bancaire. En programmation procéd
 ```c
 /* fichier: compte.c - Style procédural PROBLÉMATIQUE */
 
-int solde_compte = 1000;
+int solde = 1000;
 
 void retirer(int montant) {
-    if (solde_compte >= montant) {
-      solde_compte -= montant;
+    if (solde >= montant) {
+      solde -= montant;
     }
 }
 
 void deposer(int montant) {
-    solde_compte += montant;
+    solde += montant;
 }
 ```
 
