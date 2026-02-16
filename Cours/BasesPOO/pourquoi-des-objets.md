@@ -14,26 +14,22 @@ L'encapsulation est **le concept central** de la programmation objet.
 
 Alan Kay, qui a popularisé le terme "programmation orientée objet" en 1966-1967, pensait aux objets comme à des cellules biologiques ou des ordinateurs individuels sur un réseau, capables uniquement de communiquer par messages. Dans une interview ultérieure, Kay a précisé que pour lui, la POO signifiait "seulement la messagerie, la rétention et protection locale de l'état, et le masquage de l'état-processus".
 
-### Un exemple : Mini système bancaire
+### Un exemple : Compte bancaire
 
-Supposons qu'on veuille développer un mini système bancaire. En programmation procédurale, sans objet, on pourrait écrire par exemple le code suivant pour gérer un compte (retrait, dépôt, intérêts) :
+Supposons qu'on veuille développer un compte bancaire. En programmation procédurale, sans objet, on pourrait écrire par exemple le code suivant pour gérer un compte (retrait, dépôt, intérêts) :
 
 ```c
 /* fichier: compte.c - Style procédural PROBLÉMATIQUE */
 
-float solde_compte = 1000.0;
-float taux_interet = 0.02;
+int solde_compte = 1000;
 
-void retirer_argent(float montant) {
-    solde_compte -= montant;  /* N'importe qui peut appeler ça ! */
-    /* Aucune vérification du solde ! */
+void retirer_argent(int montant) {
+    if (solde_compte >= montant) {
+      solde_compte -= montant;
+    }
 }
 
-void calculer_interets() {
-    solde_compte += solde_compte * taux_interet;
-}
-
-void deposer_argent(float montant) {
+void deposer_argent(int montant) {
     solde_compte += montant;
 }
 ```
@@ -71,11 +67,11 @@ graph TB
     EXT["Code extérieur<br/>(autres objets, modules)"]
     
     subgraph MEMBRANE["Interface publique (membrane)"]
-        M1["+ retirer()"]
-        M2["+ deposer()"]
-        M3["+ obtenirSolde()"]
+        M1["\+ retirer(somme: integer): void"]
+        M2["\+ deposer(somme: integer): void"]
+        M3["\+ obtenirSolde(): integer"]
         
-        NOYAU["État interne (noyau)<br/><br/>- solde<br/>- taux<br/>- historique"]
+        NOYAU["État interne (noyau)<br/><br/>- solde: integer<br/>"]
         
         M1 ~~~ NOYAU
         M2 ~~~ NOYAU
