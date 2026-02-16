@@ -52,7 +52,9 @@ void fonction_malveillante() {
 
 On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'Alan Kay, on va placer les données dans le noyau d'une cellule, ces données ne seront pas directement accessible à partir de l'extérieur de la cellule. Il faudra passer par la membrane.
 
-Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, tout comme en biologie, elle va conditionner les échanges entre l'intérieur et l'extérieur.
+Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, tout comme en biologie, elle va conditionner les échanges entre l'intérieur et l'extérieur. La membrane définie les **essages** que l'objet peut traiter. Dans notre exemple il y en a trois. En terme de programmation objet dans le langage Java, on appelle ces messages de méthodes. Quand l'extérieur envoie un message à un objet, on dit qu'il procède à un appel de méthode sur cet objet. 
+
+Vous noterez certainement la similitude entre les méthodes qui apparaissent dans la membrane et les fonctions que nous avons utilisé précédemment en `C`. 
 
 
 
