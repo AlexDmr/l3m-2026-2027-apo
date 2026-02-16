@@ -147,8 +147,11 @@ public class Compte {
     // Méthode main pour tester
     public static void main(String[] args) {
         Compte monCompte = new Compte(1500);
-        monCompte.deposer(500);
-        monCompte.retirer(300);
+
+        monCompte.solde = 30; // Cette ligne ne compile pas, accès direct impossible à solde
+
+        monCompte.deposer(500);   // On dépose 500, on a 2000
+        monCompte.retirer(300);   // On retire 300, on a 1700
         monCompte.retirer(2000);  // Tentative de retrait supérieur au solde
     }
 }
