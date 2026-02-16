@@ -64,6 +64,33 @@ On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'A
 
 Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, tout comme en biologie, elle va conditionner les échanges entre l'intérieur et l'extérieur.
 
+```mermaid
+graph TB
+    EXT["Code extérieur<br/>(autres objets, modules)"]
+    
+    subgraph MEMBRANE["Interface publique (membrane)"]
+        M1["+ retirer()"]
+        M2["+ deposer()"]
+        M3["+ obtenirSolde()"]
+        
+        NOYAU["État interne (noyau)<br/><br/>- solde<br/>- taux<br/>- historique"]
+        
+        M1 ~~~ NOYAU
+        M2 ~~~ NOYAU
+        M3 ~~~ NOYAU
+    end
+    
+    EXT -->|"Messages"| MEMBRANE
+    
+    style MEMBRANE fill:#3498db,stroke:#2980b9,stroke-width:4px,color:#fff
+    style NOYAU fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
+    style M1 fill:#5dade2,stroke:#2980b9,stroke-width:2px,color:#fff
+    style M2 fill:#5dade2,stroke:#2980b9,stroke-width:2px,color:#fff
+    style M3 fill:#5dade2,stroke:#2980b9,stroke-width:2px,color:#fff
+    style EXT fill:#95a5a6,color:#fff
+```
+
+
 
 
 _________
