@@ -62,7 +62,7 @@ Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, 
 graph TB
     EXT["Code extérieur<br/>(autres objets, modules)"]
     
-    subgraph MEMBRANE["Interface publique (membrane)"]
+    subgraph MEMBRANE["Interface / membrane"]
         M1["\+ retirer(montant: int): void"]
         M2["\+ deposer(montant: int): void"]
         M3["\+ obtenirSolde(): int"]
