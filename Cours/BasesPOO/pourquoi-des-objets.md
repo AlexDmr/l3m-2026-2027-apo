@@ -45,7 +45,9 @@ void fonction_malveillante() {
 ```
 
 ### Résumons les problèmes
-- N'importe quelle partie du programme peut accéder et modifier `solde`
+- N'importe quelle partie du programme peut accéder et modifier `solde_compte`.
+- Impossible de garantir qu'on ne retire pas plus que le solde disponible
+- Si 50 fonctions utilisent `solde_compte`, un bug peut venir de n'importe où
 - Les données sont complètement exposées en lecture et surtout en écriture
 - Aucun moyen de garantir la cohérence des données
 ## Avec l'encapsulation
@@ -61,18 +63,18 @@ graph TB
     EXT["Code extérieur<br/>(autres objets, modules)"]
     
     subgraph MEMBRANE["Interface publique (membrane)"]
-        M1["\+ retirer(somme: integer): void"]
-        M2["\+ deposer(somme: integer): void"]
-        M3["\+ obtenirSolde(): integer"]
+        M1["\+ retirer(montant: int): void"]
+        M2["\+ deposer(montant: int): void"]
+        M3["\+ obtenirSolde(): int"]
         
-        NOYAU["État interne (noyau)<br/><br/>- solde: integer<br/>"]
+        NOYAU["État interne (noyau)<br/><br/>- solde: int<br/>"]
         
         M1 ~~~ NOYAU
         M2 ~~~ NOYAU
         M3 ~~~ NOYAU
     end
     
-    EXT -->|"✅ Messages"| MEMBRANE
+    EXT -->|"Messages"| MEMBRANE
     
     style MEMBRANE fill:#3498db,stroke:#2980b9,stroke-width:4px,color:#fff
     style NOYAU fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
