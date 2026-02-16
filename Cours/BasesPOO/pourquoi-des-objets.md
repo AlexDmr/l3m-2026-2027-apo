@@ -80,7 +80,7 @@ graph TB
         M3 ~~~ NOYAU
     end
     
-    EXT -->|"Messages"| MEMBRANE
+    EXT -->|"✅ Messages"| MEMBRANE
     
     style MEMBRANE fill:#3498db,stroke:#2980b9,stroke-width:4px,color:#fff
     style NOYAU fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
@@ -91,6 +91,7 @@ graph TB
 ```
 
 
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 
 _________
