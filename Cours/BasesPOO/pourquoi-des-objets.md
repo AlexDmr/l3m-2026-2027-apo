@@ -58,122 +58,18 @@ void autre_fonction() {
 - Si 50 fonctions utilisent `solde_compte`, un bug peut venir de n'importe où
 - Les données sont complètement exposées en lecture et surtout en écriture
 - Aucun moyen de garantir la cohérence des données
+## Avec l'encapsulation
 
-Avec l'encapsulation en Java (programmation orientée objet) :
+On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'Alan Kay, on va placer les données dans le noyau d'une cellule, ces données ne seront pas directement accessible à partir de l'extérieur de la cellule. Il faudra passer par la membrane.
 
-```java
-// fichier: CompteBancaire.java - Style objet SOLUTION
+Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, tout comme en biologie, elle va conditionner les échanges entre l'intérieur et l'extérieur.
 
-public class CompteBancaire {
-    // Attributs PRIVÉS - invisibles de l'extérieur
-    private double solde;
-    private double taux;
-    
-    // Constructeur
-    public CompteBancaire() {
-        this.solde = 1000.0;
-        this.taux = 0.02;
-    }
-    
-    // Méthode publique avec contrôle
-    public boolean retirer(double montant) {
-        if (montant <= this.solde) {  // Contrôle centralisé
-            this.solde -= montant;
-            return true;  // Succès
-        }
-        return false;  // Échec : protection contre découvert
-    }
-    
-    public void deposer(double montant) {
-        if (montant > 0) {  // Validation
-            this.solde += montant;
-        }
-    }
-    
-    // Accès contrôlé en lecture seule
-    public double obtenirSolde() {
-        return this.solde;
-    }
-    
-    public void calculerInterets() {
-        this.solde += this.solde * this.taux;
-    }
-}
-```
 
-```java
-// fichier: Main.java - Utilisation
 
-public class Main {
-    public static void main(String[] args) {
-        CompteBancaire monCompte = new CompteBancaire();
-        
-        // monCompte.solde = -5000;  // ERREUR DE COMPILATION !
-        // On ne peut PAS accéder directement à 'solde'
-        
-        boolean succes = monCompte.retirer(200);  // OK, vérifié
-        if (succes) {
-            System.out.println("Retrait effectué");
-        }
-        
-        double solde = monCompte.obtenirSolde();  // Accès contrôlé
-        System.out.println("Solde actuel : " + solde);
-        
-        // Impossible de mettre le compte dans un état incohérent !
-    }
-}
-```
+_________
+XXXX
+_________
 
-### Comparaison directe : le même bug
-
-**En C (procédural) :**
-```c
-/* Fichier 1 */
-extern float solde_compte;
-
-void traiter_facture() {
-    solde_compte -= 500.0;  /* Oups, pas de vérification */
-}
-
-/* Fichier 2 */
-extern float solde_compte;
-
-void bonus_client() {
-    solde_compte += 100.0;  /* Accès direct */
-}
-
-/* Fichier 3 */
-extern float solde_compte;
-
-void corriger_erreur() {
-    solde_compte = 0.0;  /* Remise à zéro brutale ! */
-}
-
-/* Résultat : cauchemar de débogage, le bug peut venir de n'importe où */
-```
-
-**En Java (orienté objet) :**
-```java
-public class GestionFactures {
-    public void traiterFacture(CompteBancaire compte) {
-        // compte.solde -= 500.0;  // IMPOSSIBLE ! Erreur de compilation
-        boolean succes = compte.retirer(500.0);  // Doit passer par la méthode
-        if (!succes) {
-            System.out.println("Solde insuffisant");
-        }
-    }
-}
-
-public class GestionBonus {
-    public void bonusClient(CompteBancaire compte) {
-        // compte.solde += 100.0;  // IMPOSSIBLE ! Erreur de compilation
-        compte.deposer(100.0);  // Doit passer par la méthode
-    }
-}
-
-// Résultat : toutes les modifications passent par les méthodes contrôlées
-// Le débogage est simple : il n'y a QU'UN SEUL endroit où le solde change
-```
 
 ### Les avantages fondamentaux de l'encapsulation
 
