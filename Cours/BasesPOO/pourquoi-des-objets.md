@@ -45,9 +45,7 @@ void fonction_malveillante() {
 ```
 
 ### Résumons les problèmes
-- N'importe quelle partie du programme peut accéder et modifier `solde_compte`.
-- Impossible de garantir qu'on ne retire pas plus que le solde disponible
-- Si 50 fonctions utilisent `solde_compte`, un bug peut venir de n'importe où
+- N'importe quelle partie du programme peut accéder et modifier `solde_compte`
 - Les données sont complètement exposées en lecture et surtout en écriture
 - Aucun moyen de garantir la cohérence des données
 ## Avec l'encapsulation
