@@ -86,6 +86,28 @@ graph TB
 
 Vous avez probablement déjà noté que ces méthodes ressemblent beaucoup aux fonctions que nous avons vu précédemment pour la version en C. La différence réside dans le fait que les méthodes sont liées à l'objet, elles sont les seules à pouvoir accéder aux données qui sont encapsulées dans l'objet. C'est sur elles que va reposer le maintient de la cohérence des données (l'état interne de l'objet).
 
+On peut reprendre le schéma précédent pour le traduire dans une syntaxe graphique plus usitée en programmation objet : le diagramme d'objet. Cela donne le diagramme ci dessous :
+
+```mermaid
+classDiagram
+    class monCompte {
+        <<instance de Compte>>
+        - solde = 1500
+        + retirer(somme: integer): void
+        + deposer(somme: integer): void
+        + obtenirSolde(): integer
+    }
+    
+    class client1 {
+        <<instance de CodeExterieur>>
+    }
+    
+    client1 ..> monCompte : appelle de méthode
+```
+
+On représente l'objet avec trois partie : son nom, la liste de ses attributs (qui codent son état interne) et liste de ses méthodes (son interface vis à vis de l'extérieur, sa membrane). 
+
+
 
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
