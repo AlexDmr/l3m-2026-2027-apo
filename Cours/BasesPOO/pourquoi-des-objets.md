@@ -107,7 +107,12 @@ classDiagram
 
 On représente l'objet avec trois partie : son nom, la liste de ses attributs (qui codent son état interne) et liste de ses méthodes (son interface vis à vis de l'extérieur, sa membrane). 
 
-On note qu'il est indiqué que l'objet **`monCompte`** est une instance de **`Compte`**. Dans les langages à objet comme Java, les objets sont toujours instances d'une classe.
+On note qu'il est indiqué que l'objet **`monCompte`** est une instance de **`Compte`**. Dans les langages à objet comme Java, les objets sont toujours instances d'une classe. Une classe est un modèle (ou "plan de construction") qui définit la structure et le comportement communs d'un ensemble d'objets. Elle spécifie :
+
+* Les attributs (données) que possèderont les objets (ici le solde)
+* Les méthodes (comportements) que pourront exécuter les objets (ici retirer, déposer et obtenirSolde)
+
+Par analogie, on pourrait dire que la classe est le plan d'architecte d'une maison là où les objets instances de cette classes sont les maisons réelles construites à partir de ce plan.
 
 
 
