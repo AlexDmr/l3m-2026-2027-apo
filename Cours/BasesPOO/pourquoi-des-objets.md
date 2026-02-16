@@ -116,7 +116,43 @@ Par analogie, on pourrait dire que la classe est le plan d'architecte d'une mais
 
 ## En Java ?
 
-XXX
+Pour vous donner une idée, voilà comment on pourrait écrire en Java une classe Compte et comment on pourrait l'instancier et l'utiliser. On verra de façon plus précise dans la suite de ce cours toutes ces notions.
+
+```java
+public class Compte {
+    private int solde; // On déclare l'entier solde comme attribue privé, non visiable à l'extérieur
+    
+    // Constructeur d'objet
+    public Compte(int soldeInitial) {
+        this.solde = soldeInitial;
+    }
+    
+    // Méthodes publiques
+    public void retirer(int somme) {
+        if (somme <= this.solde) {
+            this.solde -= somme;
+        }
+    }
+    
+    public void deposer(int somme) {
+        if (somme > 0) {
+            this.solde += somme;
+        }
+    }
+    
+    public int obtenirSolde() {
+        return this.solde;
+    }
+    
+    // Méthode main pour tester
+    public static void main(String[] args) {
+        Compte monCompte = new Compte(1500);
+        monCompte.deposer(500);
+        monCompte.retirer(300);
+        monCompte.retirer(2000);  // Tentative de retrait supérieur au solde
+    }
+}
+```
 
 
 
