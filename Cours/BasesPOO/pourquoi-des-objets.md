@@ -62,9 +62,7 @@ void autre_fonction() {
 
 On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'Alan Kay, on va placer les données dans le noyau d'une cellule, ces données ne seront pas directement accessible à partir de l'extérieur de la cellule. Il faudra passer par la membrane.
 
-Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, tout comme en biologie, elle va conditionner les échanges entre l'intérieur et l'extérieur. Le schéma ci-dessous montre le code extérieur qui veut interragir avec les données contenues dans le noyau. Comme ces dernières sont encapsulées, il va devoir nécessairement passer par la membrane.
-
-Le code extérieur ne peut pas interragir n'importe comment avec la membrane, cette dernière définie un ensemble de méthodes. Ce sont les messages qui peuvent être appelés depuis l'extérieur. Une méthode a un nom (ex: retirer), elle peut avoir des paramètre (ex: une somme, de type entier) et une valeur de retour (ex: void). 
+Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, tout comme en biologie, elle va conditionner les échanges entre l'intérieur et l'extérieur.
 
 
 
@@ -72,10 +70,10 @@ Le code extérieur ne peut pas interragir n'importe comment avec la membrane, ce
 graph TB
     EXT["Code extérieur<br/>(autres objets, modules)"]
     
-    subgraph MEMBRANE["Interface / membrane"]
-        M1["\+ retirer(somme: integer): void"]
-        M2["\+ deposer(somme: integer): void"]
-        M3["\+ obtenirSolde(): integer"]
+    subgraph MEMBRANE["Interface publique (membrane)"]
+        M1["+ retirer()"]
+        M2["+ deposer()"]
+        M3["+ obtenirSolde()"]
         
         NOYAU["État interne (noyau)<br/><br/>- solde<br/>- taux<br/>- historique"]
         
@@ -84,7 +82,7 @@ graph TB
         M3 ~~~ NOYAU
     end
     
-    EXT -->|"Messages"| MEMBRANE
+    EXT -->|"✅ Messages"| MEMBRANE
     
     style MEMBRANE fill:#3498db,stroke:#2980b9,stroke-width:4px,color:#fff
     style NOYAU fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
@@ -93,57 +91,6 @@ graph TB
     style M3 fill:#5dade2,stroke:#2980b9,stroke-width:2px,color:#fff
     style EXT fill:#95a5a6,color:#fff
 ```
-
-Voyons maintenant comment traduire cela dans une notation utilisé en informatique, le diagramme de classe UML
-
-```mermaid
-classDiagram
-    class Compte {
-        - solde: integer
-        - taux: float
-        - historique: List
-        + retirer(somme: integer): void
-        + deposer(somme: integer): void
-        + obtenirSolde(): integer
-    }
-    
-    class CodeExterieur {
-        <<client>>
-    }
-    
-    CodeExterieur ..> Compte : utilise
-```
-
-```mermaid
-classDiagram
-    class monCompte {
-        <<instance de Compte>>
-        - solde = 1500
-        - taux = 0.02
-        - historique = ["dépôt 1000", "retrait 500", "dépôt 1000"]
-        + retirer(somme: integer): void
-        + deposer(somme: integer): void
-        + obtenirSolde(): integer
-    }
-    
-    class client1 {
-        <<instance de CodeExterieur>>
-    }
-    
-    class client2 {
-        <<instance de CodeExterieur>>
-    }
-    
-    client1 ..> monCompte : envoie messages
-    client2 ..> monCompte : envoie messages
-
-```
-
-
-
-
-
-
 
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
