@@ -16,7 +16,7 @@ Alan Kay, qui a popularisé le terme "programmation orientée objet" en 1966-196
 
 ### Un exemple : Compte bancaire
 
-Supposons qu'on veuille développer un compte bancaire. En programmation procédurale, sans objet, on pourrait écrire par exemple le code suivant pour gérer un compte (retrait, dépôt, intérêts) :
+Supposons qu'on veuille développer un compte bancaire. En programmation procédurale, sans objet, on pourrait écrire par exemple le code suivant pour gérer un compte (retrait, dépôt) :
 
 ```c
 /* fichier: compte.c - Style procédural PROBLÉMATIQUE */
@@ -34,17 +34,13 @@ void deposer_argent(int montant) {
 }
 ```
 
-Le problème est que les données ainsi définies ne sont pas bien protégées, c'est à dire que depuis un autre fichier, on pourrait facilement les modifier sans que le concepteur de ces fonctions et données ne puisse l'epécher. Par exemple :
+Les fonctions `retirer_argent` et `deposer_argent` que nous avons définies gèrent l'accès au solde du compte. En particulier, la fonction `retirer_argent` vérifie que le solde est suffisant pour le retrait. Le problème est que la variable `solde_compte` n'est pas protégée, c'est à dire que depuis un autre fichier, on pourrait facilement la modifier sans passer par les fonctions. Par exemple :
 ```c
 /* Dans n'importe quel autre fichier du projet : */
 extern float solde_compte;  /* Accessible partout ! */
 
 void fonction_malveillante() {
     solde_compte = -5000.0;  /* CATASTROPHE : personne ne peut l'empêcher */
-}
-
-void autre_fonction() {
-    retirer_argent(10000.0);  /* Aucune vérification ! Solde négatif ! */
 }
 ```
 
