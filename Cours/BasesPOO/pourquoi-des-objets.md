@@ -16,44 +16,40 @@ Alan Kay, qui a popularisé le terme "programmation orientée objet" en 1966-196
 
 ### Un exemple : Compte bancaire
 
-Supposons qu'on veuille développer un compte bancaire. En programmation procédurale, sans objet, on pourrait écrire par exemple le code suivant pour gérer un compte (retrait, dépôt, intérêts) :
+Supposons qu'on veuille développer un compte bancaire. En programmation procédurale, sans objet, on pourrait écrire par exemple le code suivant pour gérer un compte (retrait, dépôt) :
 
 ```c
 /* fichier: compte.c - Style procédural PROBLÉMATIQUE */
 
 int solde_compte = 1000;
 
-void retirer_argent(int montant) {
+void retirer(int montant) {
     if (solde_compte >= montant) {
       solde_compte -= montant;
     }
 }
 
-void deposer_argent(int montant) {
+void deposer(int montant) {
     solde_compte += montant;
 }
 ```
 
-Le problème est que les données ainsi définies ne sont pas bien protégées, c'est à dire que depuis un autre fichier, on pourrait facilement les modifier sans que le concepteur de ces fonctions et données ne puisse l'epécher. Par exemple :
+Les fonctions `retirer` et `deposer` que nous avons définies gèrent l'accès au solde du compte. En particulier, la fonction `retirer` vérifie que le solde est suffisant pour le retrait. Le problème est que la variable `solde` n'est pas protégée, c'est à dire que depuis un autre fichier, on pourrait facilement la modifier sans passer par les fonctions. Par exemple :
 ```c
 /* Dans n'importe quel autre fichier du projet : */
-extern float solde_compte;  /* Accessible partout ! */
+extern float solde;  /* Accessible partout ! */
 
 void fonction_malveillante() {
-    solde_compte = -5000;  /* CATASTROPHE : personne ne peut l'empêcher */
-}
-
-void fonction_bienveillante() { // N'utilise que les fonctions d'accès
-    retirer_argent(1000);
-    deposer_argent(200);
-    deposer_argent(300);
+    solde = -5000.0;  /* CATASTROPHE : personne ne peut l'empêcher */
 }
 ```
 
 ### Résumons les problèmes
-- N'importe quelle partie du programme peut accéder et modifier `solde_compte`
+- N'importe quelle partie du programme peut accéder et modifier `solde_compte`.
+- Impossible de garantir qu'on ne retire pas plus que le solde disponible
+- Si 50 fonctions utilisent `solde_compte`, un bug peut venir de n'importe où
 - Les données sont complètement exposées en lecture et surtout en écriture
-- Aucun moyen de garantir la cohérence des données de ce fait
+- Aucun moyen de garantir la cohérence des données
 ## Avec l'encapsulation
 
 On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'Alan Kay, on va placer les données dans le noyau d'une cellule, ces données ne seront pas directement accessible à partir de l'extérieur de la cellule. Il faudra passer par la membrane.
@@ -66,7 +62,7 @@ Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, 
 graph TB
     EXT["Code extérieur<br/>(autres objets, modules)"]
     
-    subgraph MEMBRANE["Interface / membrane"]
+    subgraph MEMBRANE["Interface publique (membrane)"]
         M1["\+ retirer(somme: integer): void"]
         M2["\+ deposer(somme: integer): void"]
         M3["\+ obtenirSolde(): integer"]
@@ -78,7 +74,7 @@ graph TB
         M3 ~~~ NOYAU
     end
     
-    EXT -->|"Messages"| MEMBRANE
+    EXT -->|"✅ Messages"| MEMBRANE
     
     style MEMBRANE fill:#3498db,stroke:#2980b9,stroke-width:4px,color:#fff
     style NOYAU fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
