@@ -68,8 +68,7 @@ Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, 
 graph TB
     EXT["Code extérieur<br/>(autres objets, modules)"]
     
-    subgraph MEMBRANE["Interface publique (membrane)"]
-        
+    subgraph MEMBRANE["Interface / Membrane"]
         NOYAU["État interne (noyau)<br/><br/>- solde<br/>- taux<br/>- historique"]
     end
     
@@ -77,12 +76,8 @@ graph TB
     
     style MEMBRANE fill:#3498db,stroke:#2980b9,stroke-width:4px,color:#fff
     style NOYAU fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
-    style M1 fill:#5dade2,stroke:#2980b9,stroke-width:2px,color:#fff
-    style M2 fill:#5dade2,stroke:#2980b9,stroke-width:2px,color:#fff
-    style M3 fill:#5dade2,stroke:#2980b9,stroke-width:2px,color:#fff
     style EXT fill:#95a5a6,color:#fff
 ```
-
 
 
 ```mermaid
