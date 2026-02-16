@@ -6,7 +6,7 @@ Dans les années 1960, les programmeurs faisaient face à un problème majeur : 
 
 C'est dans ce contexte qu'en Norvège, deux chercheurs, Ole-Johan Dahl et Kristen Nygaard, créent Simula entre 1961 et 1967. Leur objectif initial était de simuler le mouvement de navires dans des ports. Ce langage a introduit des mécanismes fondamentalement nouveaux : le concept de classe pour l'encapsulation de la structure des données et du code, les sous-classes pour la réutilisation du code, et la création dynamique d'objets.
 
-## Le concept d'encapsulation
+## Quels sont les problèmes sans l'encapsulation ?
 
 L'encapsulation est **le concept central** de la programmation objet.
 
@@ -48,7 +48,7 @@ void fonction_malveillante() {
 - N'importe quelle partie du programme peut accéder et modifier `solde_compte`
 - Les données sont complètement exposées en lecture et surtout en écriture
 - Aucun moyen de garantir la cohérence des données
-## Avec l'encapsulation
+## Qu'est ce que l'encapsulation ? En quoi nous aide-t-elle ?
 
 On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'Alan Kay, on va placer les données dans le noyau d'une cellule, ces données ne seront pas directement accessible à partir de l'extérieur de la cellule. Il faudra passer par la membrane.
 
@@ -113,6 +113,10 @@ On note qu'il est indiqué que l'objet **`monCompte`** est une instance de **`Co
 * Les méthodes (comportements) que pourront exécuter les objets (ici retirer, déposer et obtenirSolde)
 
 Par analogie, on pourrait dire que la classe est le plan d'architecte d'une maison là où les objets instances de cette classes sont les maisons réelles construites à partir de ce plan.
+
+## En Java ?
+
+XXX
 
 
 
