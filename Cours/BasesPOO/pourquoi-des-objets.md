@@ -1,4 +1,4 @@
-# Pourquoi utilise-t-on la programmation orientée objet ?
+# Pourquoi la programmation orientée objet ?
 
 ## Le contexte historique : un problème de complexité
 
