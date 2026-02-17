@@ -14,40 +14,7 @@ L'encapsulation est **le concept central** de la programmation objet.
 
 Alan Kay, qui a popularisé le terme "programmation orientée objet" en 1966-1967, pensait aux objets comme à des cellules biologiques ou des ordinateurs individuels sur un réseau, capables uniquement de communiquer par messages. Dans une interview ultérieure, Kay a précisé que pour lui, la POO signifiait "seulement la messagerie, la rétention et protection locale de l'état, et le masquage de l'état-processus".
 
-### Un exemple : Compte bancaire
 
-Supposons qu'on veuille développer un compte bancaire. En programmation procédurale, sans objet, on pourrait écrire par exemple le code suivant pour gérer un compte (retrait, dépôt) :
-
-```c
-/* fichier: compte.c - Style procédural PROBLÉMATIQUE */
-
-int solde = 1000;
-
-void retirer(int montant) {
-    if (solde >= montant) {
-      solde -= montant;
-    }
-}
-
-void deposer(int montant) {
-    solde += montant;
-}
-```
-
-Les fonctions `retirer` et `deposer` que nous avons définies gèrent l'accès au solde du compte. En particulier, la fonction `retirer` vérifie que le solde est suffisant pour le retrait. Le problème est que la variable `solde` n'est pas protégée, c'est à dire que depuis un autre fichier, on pourrait facilement la modifier sans passer par les fonctions. Par exemple :
-```c
-/* Dans n'importe quel autre fichier du projet : */
-extern float solde;  /* Accessible partout ! */
-
-void fonction_malveillante() {
-    solde = -5000.0;  /* CATASTROPHE : personne ne peut l'empêcher */
-}
-```
-
-### Résumons les problèmes
-- N'importe quelle partie du programme peut accéder et modifier `solde_compte`
-- Les données sont complètement exposées en lecture et surtout en écriture
-- Aucun moyen de garantir la cohérence des données
 ## Qu'est ce que l'encapsulation ? En quoi nous aide-t-elle ?
 
 On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'Alan Kay, on va placer les données dans le noyau d'une cellule, ces données ne seront pas directement accessible à partir de l'extérieur de la cellule. Il faudra passer par la membrane.
