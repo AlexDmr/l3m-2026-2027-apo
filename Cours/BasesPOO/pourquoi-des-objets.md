@@ -17,48 +17,7 @@ Alan Kay, qui a popularisé le terme "programmation orientée objet" en 1966-196
 
 
 
-## En Java ?
 
-Pour vous donner une idée, voilà comment on pourrait écrire en Java une classe Compte et comment on pourrait l'instancier et l'utiliser. On verra de façon plus précise dans la suite de ce cours toutes ces notions.
-
-```java
-public class Compte {
-    private int solde; // On déclare l'entier solde comme attribue privé, non visiable à l'extérieur
-    
-    // Constructeur d'objet
-    public Compte(int soldeInitial) {
-        this.solde = soldeInitial;
-    }
-    
-    // Méthodes publiques
-    public void retirer(int somme) {
-        if (somme <= this.solde) {
-            this.solde -= somme;
-        }
-    }
-    
-    public void deposer(int somme) {
-        if (somme > 0) {
-            this.solde += somme;
-        }
-    }
-    
-    public int obtenirSolde() {
-        return this.solde;
-    }
-    
-    // Méthode main pour tester
-    public static void main(String[] args) {
-        Compte monCompte = new Compte(1500);
-
-        monCompte.solde = 30; // Cette ligne ne compile pas, accès direct impossible à solde
-
-        monCompte.deposer(500);   // On dépose 500, on a 2000
-        monCompte.retirer(300);   // On retire 300, on a 1700
-        monCompte.retirer(2000);  // Tentative de retrait supérieur au solde
-    }
-}
-```
 
 
 
