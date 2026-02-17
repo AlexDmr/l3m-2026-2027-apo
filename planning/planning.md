@@ -2,9 +2,9 @@
 
 | Semaine | Cours / TD | TP |
 |---------|------------|----|
-|01 | Encaspulation, Classes et instances | Etudiants |
-|02 | | |
-|03 | | |
+|01 | Encaspulation1, Classes et instances | Etudiants |
+|02 | Interfaces| Personnels univ ? |
+|03 | Héritage, classes abstraites | |
 |04 | CC  | CC  |
 |05 | | |
 |06 | | |
