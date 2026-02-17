@@ -1,5 +1,13 @@
 # Qu'est ce que l'encapsulation ? En quoi nous aide-t-elle ?
 
+L'encapsulation est **le concept central et fondamental** de la programmation objet.
+
+## L'analogie d'Alan Kay
+
+Alan Kay, qui a popularisé le terme "programmation orientée objet" en 1966-1967, pensait aux objets comme à des cellules biologiques ou des ordinateurs individuels sur un réseau, capables uniquement de communiquer par messages. Dans une interview ultérieure, Kay a précisé que pour lui, la POO signifiait "seulement la messagerie, la rétention et protection locale de l'état, et le masquage de l'état-processus".
+
+## Mise en oeuvre de l'encapsulation pour le compte bancaire
+
 On va maintenant encapsuler les données du compte. Si on reprend l'analogie d'Alan Kay, on va placer les données dans le noyau d'une cellule, ces données ne seront pas directement accessible à partir de l'extérieur de la cellule. Il faudra passer par la membrane.
 
 Cette membrane est l'interface entre l'intérieur et l'exérieur de la cellule, tout comme en biologie, elle va conditionner les échanges entre l'intérieur et l'extérieur. On dit que l'extérieur envoie des messages vers la cellule, la membrane définie les messages qui sont compris par la cellule. En termes programmation par objet cela se traduit ainsi : *"L'objet définie une interface de communication avec l'extérieur sous la forme de méthodes, les autres objets peuvent communiquer avec lui en appelant ces méthodes*.
