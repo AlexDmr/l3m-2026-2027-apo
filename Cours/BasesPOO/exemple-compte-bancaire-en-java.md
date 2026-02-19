@@ -1,6 +1,8 @@
 # Compte bancaire en Java ?
 
-Pour vous donner une idée, voilà comment on pourrait écrire en Java une classe Compte et comment on pourrait l'instancier et l'utiliser. On verra de façon plus précise dans la suite de ce cours toutes ces notions.
+Pour vous donner une idée, voilà comment on pourrait écrire en Java une classe Compte et comment on pourrait l'instancier et l'utiliser. En Java, c'est au niveau de la classe que va être gérée l'encapsulation .
+
+On verra de façon plus précise dans la suite de ce cours toutes ces notions.
 
 ```java
 public class Compte {
