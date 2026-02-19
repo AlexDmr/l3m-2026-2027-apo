@@ -4,7 +4,7 @@
 |---------|------------|----|
 |01 | Encaspulation1, Classes et instances | Etudiants |
 |02 | Interfaces, Héritage| Personnels univ ? |
-|03 | Héritage | |
+|03 | Généricité, polymorphisme | |
 |04 | CC-1  | CC-1  |
 |05 | API Collection, Exceptions | |
 |06 | Classes abstraites | |
