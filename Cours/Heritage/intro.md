@@ -91,6 +91,10 @@ classDiagram
 
 <div style="text-align: center;"><i>Hiérarchie de comptes bancaires</i></div>
 
+Vous pouvez constater que les constructeurs des sous-classes reprennent les arguments de la super-classe Compte en y ajoutant à chaque fois un paramètre pour initialiser l'attribut qui leur est propre.
+
+XXX Donner le code constructeur, surcharger une méthode (ex: obtenir solde... ?) expliquer usage de super...
+
 
 
 <hr/><hr/><hr/><hr/><hr/><hr/>
