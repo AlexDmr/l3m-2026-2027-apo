@@ -60,24 +60,24 @@ On cherche à représenter ces informations de sorte à faire apparaitre et à p
 ```mermaid
 classDiagram
     class Compte {
-        -titulaire
-        -numero
-        -solde
-        +deposer()
-        +retirer()
+        -titulaire: String
+        -numero: String
+        -solde: int
+        +deposer(m: int)
+        +retirer(m: int)
         +obtenirSolde()
     }
     
     class CompteCourant {
-        -decouvertAutorise
+        -decouvertAutorise: int
     }
     
     class CompteEpargne {
-        -tauxInteret
+        -tauxInteret: int
     }
     
     class CompteProfessionnel {
-        -raisonSociale
+        -raisonSociale: String
     }
     
     Compte <|-- CompteCourant
