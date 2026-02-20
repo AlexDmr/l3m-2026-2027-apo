@@ -6,6 +6,25 @@ L'héritage est né d'un besoin concret de réutilisation de code dans les simul
 
 ## La raison d'être
 
+Reprenons l'exemple des comptes bancaires. Supposons qu'il existe différents types de comptes :
+
+* Le compte courant : Celui sur lequel on retire de l'argent, qui peut avoir un découvert autorisé.
+* Le compte d'épargne : Un compte qui n'autorise pas de découvert, sur lequel on va placer de l'argent qui sera rémunéré par un taux d'intérêt.
+* Le compte professionnel : à destination d'une entreprise, il référence la raison social de cette entreprise.
+
+Tous ces comptes partagent aussi des informations communes :
+
+* Une indication de leur titulaire
+* Un numéro de compte
+* Un solde
+
+En plus de cela, on aimerait pouvoir faire des opérations sur tous ces comptes :
+
+* Retirer une somme d'argent
+* Déposer une somme d'argent
+* consulter le solde
+
+
 XXX Ne pas répliquer le code, pouvoir considérer que COmpteCourant, ComptePargne et CompteProfesionnel sont tous des Comptes et les traiter en tant que tel.
 
 L'héritage permet d'éviter cette duplication en créant une hiérarchie :
