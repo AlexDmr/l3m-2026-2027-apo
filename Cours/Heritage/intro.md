@@ -109,7 +109,7 @@ XXX Donner le code constructeur, surcharger une méthode (ex: obtenir solde... ?
 
 4. **Polymorphisme** : On peut traiter tous les comptes de manière uniforme via le type `Compte`, tout en conservant leurs comportements spécifiques.
 
-## ## Conclusion
+## Conclusion
 
 L'héritage est un outil puissant inventé dans les années 1960 pour résoudre le problème de la duplication de code dans les systèmes de simulation. Simula 67 a introduit tous les éléments aujourd'hui considérés comme essentiels dans un langage orienté objet : encapsulation, héritage, liaison tardive, et création dynamique d'objets [1].
 
