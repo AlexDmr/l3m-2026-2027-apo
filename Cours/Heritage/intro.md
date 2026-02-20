@@ -91,7 +91,19 @@ classDiagram
 
 <div style="text-align: center;"><i>Hiérarchie de comptes bancaires</i></div>
 
-Vous pouvez constater que les constructeurs des sous-classes reprennent les arguments de la super-classe Compte en y ajoutant à chaque fois un paramètre pour initialiser l'attribut qui leur est propre.
+Vous pouvez constater que les constructeurs des sous-classes reprennent les arguments de la super-classe Compte en y ajoutant à chaque fois un paramètre pour initialiser l'attribut qui leur est propre. En effet, construire un CompteCourant (respectivement un CompteEpargne ou un CompteProfessionnel) nécessite de construire un Compte. Examinons la classe CompteCourant et en particulier don constructeur :
+
+```java
+class CompteCourant extends Compte {
+  private int decouvertAutorise;
+
+  public CompteCourant(String titulaire, String numéro, int solde, int decouvert) {
+    // La première instruction du constructeur doit être un appel au super-constructeur
+    super(titulaire, numéro, solde);
+    this.decouvertAutorise = decouvert;
+  }
+}
+```
 
 XXX Donner le code constructeur, surcharger une méthode (ex: obtenir solde... ?) expliquer usage de super...
 
