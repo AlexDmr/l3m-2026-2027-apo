@@ -100,6 +100,8 @@ class CompteCourant extends Compte {
   public CompteCourant(String titulaire, String numéro, int solde, int decouvert) {
     // La première instruction du constructeur doit être un appel au super-constructeur
     super(titulaire, numéro, solde);
+
+    // Reste de la construction
     this.decouvertAutorise = decouvert;
   }
 }
