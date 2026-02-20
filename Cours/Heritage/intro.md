@@ -8,9 +8,12 @@ L'héritage est né d'un besoin concret de réutilisation de code dans les simul
 
 L'**héritage** est un mécanisme qui permet à une classe (appelée **sous-classe** ou **classe dérivée**) de récupérer automatiquement les attributs et méthodes d'une autre classe (appelée **superclasse** ou **classe de base**).
 
-Si la classe B hérite de la classe A, alors on peut écrire que **`B est un A`**.
+Si la classe B hérite de la classe A, alors on peut écrire que **`B est un A`**. 
 
-### Principe fondamental
+Avec l'héritage, on peut modéliser des relations de classification, par exemple :
+* Mamifère **est un** type d'animal
+* Chien **est un** type de mamifère
+* Chat **est un** type de mamifère
 
 L'héritage permet aux programmeurs de créer des classes qui sont construites sur des classes existantes, de spécifier une nouvelle implémentation tout en maintenant les mêmes comportements, de réutiliser du code et d'étendre de manière indépendante un logiciel via des classes et interfaces publiques.
 
@@ -33,9 +36,7 @@ En plus de cela, on aimerait pouvoir faire des opérations sur tous ces comptes 
 * consulter le solde
 
 
-XXX Ne pas répliquer le code, pouvoir considérer que COmpteCourant, ComptePargne et CompteProfesionnel sont tous des Comptes et les traiter en tant que tel.
 
-L'héritage permet d'éviter cette duplication en créant une hiérarchie :
 
 ```mermaid
 classDiagram
