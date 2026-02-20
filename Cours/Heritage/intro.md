@@ -33,9 +33,7 @@ En plus de cela, on aimerait pouvoir faire des opérations sur tous ces comptes 
 * consulter le solde
 
 
-On cherche à représenter ces informations de sorte qu'on puisse considérer chaque type de compte (courant, d'épargne, professionnel) comme un compte.
-
-L'héritage permet d'éviter cette duplication en créant une hiérarchie :
+On cherche à représenter ces informations de sorte à faire apparaitre et à pouvoir exploiter les relation de type **est un**. Par exemple qu'un compte courant **est un** type de compte. On va utiliser pour cela la notion d'héritage que nous illustrons avec le diagramme de classe UML suivant :
 
 ```mermaid
 classDiagram
@@ -65,7 +63,7 @@ classDiagram
     Compte <|-- CompteProfessionnel
 ```
 
-*Schéma 1 : Hiérarchie de comptes bancaires - évite la duplication des attributs communs*
+<div style="text-align: center;"><i>Hiérarchie de comptes bancaires</i></div>
 
 
 ## Exemples en Java : l'API Collections
