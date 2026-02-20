@@ -9,12 +9,29 @@ L'héritage est né d'un besoin concret de réutilisation de code dans les simul
 L'**héritage** est un mécanisme qui permet à une classe (appelée **sous-classe** ou **classe dérivée**) de récupérer automatiquement les attributs et méthodes d'une autre classe (appelée **superclasse** ou **classe de base**).
 
 Si la classe B hérite de la classe A, alors on peut écrire que **`B est un A`**. Par exemple :
-* Mamifère **est un** type d'animal
-* Chien **est un** type de mamifère
-* Chat **est un** type de mamifère
+* Mammifère **est un** type d'animal
+* Chien **est un** type de mammifère
+* Chat **est un** type de mammifère
 
 Ces relations **est un** entre les classes permettent d'exprimer une **hiérarchie de classe**, c'est à dire un arbre dans lequel les noeuds sont les classes et les arcs orientés la relation **est un**. On utilise les diagrammes de classes UML pour représenter cela :
 
+```mermaid
+classDiagram
+    class Animal {
+    }
+    class Mammifère {
+    }
+    class Chien {
+    }
+    class Chat {
+    }
+
+
+    Animal <|-- Mammifère
+    Mammifère <|-- Chien
+    Mammifère <|-- Chat
+
+```
 
 
 L'héritage permet aux programmeurs de créer des classes qui sont construites sur des classes existantes, de spécifier une nouvelle implémentation tout en maintenant les mêmes comportements, de réutiliser du code et d'étendre de manière indépendante un logiciel via des classes et interfaces publiques.
