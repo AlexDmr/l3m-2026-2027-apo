@@ -71,17 +71,17 @@ classDiagram
     
     class CompteCourant {
         -decouvertAutorise: int
-        +CompteCourant(t: String, n: String, s: int, découvert: int)
+        +CompteCourant(t: String, n: String, s: int, d: int)
     }
     
     class CompteEpargne {
         -tauxInteret: int
-        +CompteEpargne(t: String, n: String, s: int, interet: int)
+        +CompteEpargne(t: String, n: String, s: int, i: int)
     }
     
     class CompteProfessionnel {
         -raisonSociale: String
-        +CompteProfessionnel(t: String, n: String, s: int, raison: String)
+        +CompteProfessionnel(t: String, n: String, s: int, r: String)
     }
     
     Compte <|-- CompteCourant
