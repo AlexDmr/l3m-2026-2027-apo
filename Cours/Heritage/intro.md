@@ -63,6 +63,7 @@ classDiagram
         -titulaire: String
         -numero: String
         -solde: int
+        +Compte(titulaire: String, numéro: String, solde: int)
         +deposer(m: int)
         +retirer(m: int)
         +obtenirSolde()
@@ -70,14 +71,17 @@ classDiagram
     
     class CompteCourant {
         -decouvertAutorise: int
+        +CompteCourant(t: String, n: String, s: int, découvert: int)
     }
     
     class CompteEpargne {
         -tauxInteret: int
+        +CompteEpargne(t: String, n: String, s: int, interet: int)
     }
     
     class CompteProfessionnel {
         -raisonSociale: String
+        +CompteProfessionnel(t: String, n: String, s: int, raison: String)
     }
     
     Compte <|-- CompteCourant
