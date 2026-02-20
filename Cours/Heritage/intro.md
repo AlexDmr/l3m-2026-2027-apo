@@ -6,6 +6,14 @@ L'héritage est né d'un besoin concret de réutilisation de code dans les simul
 
 ## La raison d'être
 
+L'**héritage** est un mécanisme qui permet à une classe (appelée **sous-classe** ou **classe dérivée**) de récupérer automatiquement les attributs et méthodes d'une autre classe (appelée **superclasse** ou **classe de base**).
+
+Si la classe B hérite de la classe A, alors on peut écrire que **`B est un A`**.
+
+### Principe fondamental
+
+L'héritage permet aux programmeurs de créer des classes qui sont construites sur des classes existantes, de spécifier une nouvelle implémentation tout en maintenant les mêmes comportements, de réutiliser du code et d'étendre de manière indépendante un logiciel via des classes et interfaces publiques.
+
 Reprenons l'exemple des comptes bancaires. Supposons qu'il existe différents types de comptes :
 
 * Le compte courant : Celui sur lequel on retire de l'argent, qui peut avoir un découvert autorisé.
@@ -59,20 +67,6 @@ classDiagram
 
 *Schéma 1 : Hiérarchie de comptes bancaires - évite la duplication des attributs communs*
 
-## La notion d'héritage : définition et mécanisme
-
-### Définition
-
-L'**héritage** est un mécanisme qui permet à une classe (appelée **sous-classe** ou **classe dérivée**) de récupérer automatiquement les attributs et méthodes d'une autre classe (appelée **superclasse** ou **classe de base**).
-
-**Relation exprimée :** "est-un" (is-a)
-- Un CompteCourant **est un** Compte
-- Un Chien **est un** Animal
-- Une ArrayList **est une** List
-
-### Principe fondamental
-
-L'héritage permet aux programmeurs de créer des classes qui sont construites sur des classes existantes, de spécifier une nouvelle implémentation tout en maintenant les mêmes comportements, de réutiliser du code et d'étendre de manière indépendante un logiciel via des classes et interfaces publiques [2].
 
 ## Exemples en Java : l'API Collections
 
