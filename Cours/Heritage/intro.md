@@ -66,7 +66,7 @@ classDiagram
         +Compte(titulaire: String, numéro: String, solde: int)
         +deposer(m: int)
         +retirer(m: int)
-        +obtenirSolde()
+        +obtenirSolde(): int
     }
     
     class CompteCourant {
@@ -107,7 +107,7 @@ class CompteCourant extends Compte {
 }
 ```
 
-XXX Donner le code constructeur, surcharger une méthode (ex: obtenir solde... ?) expliquer usage de super...
+L'instruction **`super`** peut être utilisée dans le constructeur ou les méthodes d'une classe qui en étend une autre, **`super`** se réfère alors à au constructeur de la classe qui est étendue ou à la méthode homonyme de la classe étendue.
 
 
 
@@ -127,32 +127,9 @@ XXX Donner le code constructeur, surcharger une méthode (ex: obtenir solde... ?
 
 L'héritage est un outil puissant inventé dans les années 1960 pour résoudre le problème de la duplication de code dans les systèmes de simulation. Simula 67 a introduit tous les éléments aujourd'hui considérés comme essentiels dans un langage orienté objet : encapsulation, héritage, liaison tardive, et création dynamique d'objets [1].
 
-Cependant, l'expérience de 50+ années de programmation orientée objet a montré que l'héritage doit être utilisé avec précaution :
+Cependant, l'expérience pratique a montré que l'héritage doit être utilisé avec précaution :
 - **Excellent** pour modéliser des relations "est-un" stables et claires
 - **Problématique** quand utilisé simplement pour réutiliser du code
 - **Souvent remplaçable** par la composition, qui offre plus de flexibilité
 
-La règle moderne : **"Favoriser la composition plutôt que l'héritage, sauf quand la relation 'est-un' est évidente et stable"**.
-
----
-
-## Références
-
-[1] **Wikipedia - Simula**  
-"Class and inheritance concepts - Simula 67"  
-https://en.wikipedia.org/wiki/Simula
-
-[2] **Wikipedia - Inheritance (object-oriented programming)**  
-"Definition and fundamental principle of inheritance"  
-https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)
-
-[3] **Wikipedia - Fragile base class**  
-"The fragile base class problem in implementation inheritance"  
-https://en.wikipedia.org/wiki/Fragile_base_class
-
-[4] **Design Patterns: Elements of Reusable Object-Oriented Software**  
-Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994)  
-"Favor object composition over class inheritance"
-
-[5] **James Gosling on Java**  
-Diverses interviews et conférences où James Gosling a exprimé ses réserves sur l'héritage d'implémentation
+La règle moderne : **"Favoriser la composition de classe plutôt que l'héritage, sauf quand la relation 'est-un' est évidente et stable"**.
