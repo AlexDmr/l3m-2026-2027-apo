@@ -2,11 +2,11 @@
 
 | Semaine | Cours / TD | TP |
 |---------|------------|----|
-|01 | Encaspulation1, Classes et instances. | Etudiants, encapsulation, debugger, ajouter l'écriture de tests JUnit en plus |
-|02 | Interfaces, Héritage | Personnels univ ? |
-|03 | Généricité, polymorphisme | |
+|01 | Encaspulation, Classes et instances. | Etudiants, encapsulation, debugger, ajouter l'écriture de tests JUnit en plus |
+|02 | Interfaces, Héritage, polymorphisme | Personnels univ ? |
+|03 | Interfaces, Héritage, polymorphisme, classe abstraite | |
 |04 | CC-1  | CC-1  |
-|05 | API Collection, Exceptions | |
+|05 | API Collection, généricité "basique", Exceptions | |
 |06 | Classes abstraites | |
 |07 | Immuabilité, Encapsulation 2 | |
 |08 | CC-2 | CC-2 |
