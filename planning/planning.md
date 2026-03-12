@@ -3,7 +3,7 @@
 | Semaine | Cours / TD | TP |
 |---------|------------|----|
 |01 | Encaspulation, Classes et instances. | Etudiants, encapsulation, debugger, ajouter l'écriture de tests JUnit en plus |
-|02 | Interfaces, Héritage, polymorphisme | Personnels univ ? |
+|02 | Interfaces, Héritage, polymorphisme | Université (contient des étudiants, des profs, ...). Des mails, des listes de diffusion, ... |
 |03 | Interfaces, Héritage, polymorphisme, classe abstraite | |
 |04 | CC-1  | CC-1  |
 |05 | API Collection, généricité "basique", Exceptions | |
@@ -19,4 +19,9 @@ _______
 
 Format CTD, TD, TP, autonomie
 * Tests au début du CTD : voir quel format
+
+
+Idée d'approche : 
+* Commencer le cours plutôt par le concept de polymorphisme ? Besoin de gérer de manière similaire des choses différentes mais liées par des relation est-un.
+* 
 
