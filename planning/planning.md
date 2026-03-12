@@ -10,18 +10,25 @@
 |06 | Classes abstraites | |
 |07 | Immuabilité, Encapsulation 2 | |
 |08 | CC-2 | CC-2 |
-|09 | Lambda & Streams | Lambda |
-|10 | Stream 2 | |
-|11 | Stream 3 | |
+|09 | Lambda & Collection | ... |
+|10 | Lambda & Stream | ... |
+|11 | Révision ? | |
 
 _______
 à caser à un moment des cours : Java / Javac, Bytecode, JAR, ...
 
 Format CTD, TD, TP, autonomie
-* Tests au début du CTD : voir quel format
+* Tests au début, du CTD : voir quel format
 
 
 Idée d'approche : 
 * Commencer le cours plutôt par le concept de polymorphisme ? Besoin de gérer de manière similaire des choses différentes mais liées par des relation est-un.
 * 
+
+Pour les streams et les lambda, reprendre un TP précédent pour introduire les lambdas à la place d'une façon de faire précédente (à coup d'héritage par exemple).
+
+* Ex : Passer en paramètre des fonctions d'affichage (lambda)
+
+_____
+Idée de TP : Implémenter une nouvelle collection, permet ***aussi*** l'introduction des lambda.
 
