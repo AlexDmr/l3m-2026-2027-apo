@@ -16,3 +16,7 @@
 
 _______
 à caser à un moment des cours : Java / Javac, Bytecode, JAR, ...
+
+Format CTD, TD, TP, autonomie
+* Tests au début du CTD : voir quel format
+
