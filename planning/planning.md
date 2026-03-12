@@ -30,5 +30,7 @@ Pour les streams et les lambda, reprendre un TP précédent pour introduire les 
 * Ex : Passer en paramètre des fonctions d'affichage (lambda)
 
 _____
-Idée de TP : Implémenter une nouvelle collection, permet ***aussi*** l'introduction des lambda.
+Idée de TP : Implémenter une nouvelle collection, permet ***aussi*** l'introduction des lambda. Collection **bag** ? **arbre**
+
+
 
