@@ -17,6 +17,11 @@
 _______
 à caser à un moment des cours : Java / Javac, Bytecode, JAR, ...
 
+Conseils Bob : 3 axes
+1. Le graphe d'objets
+2. La hérarchie de classes ...
+3. La dynamique ??? (plus sur de ça et de ce que ça recouvre, mais il me semble qu'on était dans l'aspect exécution du code)
+
 Format CTD, TD, TP, autonomie
 * Tests au début, du CTD : voir quel format
 
