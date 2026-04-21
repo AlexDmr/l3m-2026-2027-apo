@@ -22,8 +22,11 @@ En trois parties :
 3. Lambda, Collections et Streams : Un pas vers le style fonctionnel
 
 ## Partie 1 : Les fondamentaux de la programmation objet
+On commence par les objets et la notion d'intérieur / extérieur, le principe d'encapsulation, l'état interne et les messages pour communiquer. Le principe d'encapsulation peut être compiqué à appliquer, surtout si l'état interne contient des structures mutables qui peuvent être exposées à l'extérieur.
+* Peut être démarrer des exercices en manipulant des objets décrits seulement par leur interface. Ca permet aussi d'expliquer la notion d'interface. Ce qui est visible de l'extérieur.
+* On verrait un graphe d'objets, les appels entre eux ? Qui connait qui ?
 
-aaaa
+Rapidement on va devoir parler des classes, les plans de construction des objets, qui expliquent comment 
 
 ## Partie 2 : Java
 
