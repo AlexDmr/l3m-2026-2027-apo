@@ -29,6 +29,12 @@ On commence par les objets et la notion d'intérieur / extérieur, le principe d
 Rapidement on va devoir parler des classes, les plans de construction des objets, qui expliquent comment 
 
 ## Partie 2 : Java
+* Surcharge de méthodes, de constructeurs
+* Variables de classes (static) / Méthodes de classes
+* Constantes, énumérations
+* Classes abstraites (contient du code mais pas instantiable directement)
+* Attribus protégés ?
+
 
 ## Partie 3 : Style fonctionnel
 
