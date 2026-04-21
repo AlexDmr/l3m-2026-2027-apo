@@ -16,6 +16,19 @@
 
 _______
 # Plan d'attaque
+En trois parties :
+1. Fondamentaux de la programmation objet : Sans trop se lier à Java ou à la réutilisation de code
+2. Les aspects plus liés à la réutilisation de code et les aspects plus propres à Java
+3. Lambda, Collections et Streams : Un pas vers le style fonctionnel
+
+## Partie 1 : Les fondamentaux de la programmation objet
+
+aaaa
+
+## Partie 2 : Java
+
+## Partie 3 : Style fonctionnel
+
 
 
 _______________________
