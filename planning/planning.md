@@ -15,6 +15,12 @@
 |11 | Révision ? | |
 
 _______
+# Plan d'attaque
+
+
+_______________________
+# Notes précédentes
+
 à caser à un moment des cours : Java / Javac, Bytecode, JAR, ...
 
 Conseils Bob : 3 axes
