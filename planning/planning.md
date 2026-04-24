@@ -32,6 +32,12 @@ Une réflexion sur la notion de compatibilité de type, présenter les deux gran
 * Compatibilité de type structurelle (comme TS par exemple)
 * Compatibilité *"déclarative"* (voir le bon terme)
 
+Principe SOLID (en partie sans doute) :
+* **Liskov substitution** : Les sous classes ou implémentations doivent pouvoir être utilisé en lieu et place des super-classes et des interfaces.
+* **Interface degregation** : Le code ne doit pas dépendre de méthodes d'interfaces inutlisées. Cela milite pour avoir les interfaces les plus petites possibles (idéalement une seule méthode par interface).
+* **
+
+
 
 ## Partie 2 : Java
 * Surcharge de méthodes, de constructeurs
