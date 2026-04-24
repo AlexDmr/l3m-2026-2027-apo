@@ -26,7 +26,12 @@ On commence par les objets et la notion d'intérieur / extérieur, le principe d
 * Peut être démarrer des exercices en manipulant des objets décrits seulement par leur interface. Ca permet aussi d'expliquer la notion d'interface. Ce qui est visible de l'extérieur.
 * On verrait un graphe d'objets, les appels entre eux ? Qui connait qui ?
 
-Rapidement on va devoir parler des classes, les plans de construction des objets, qui expliquent comment 
+Rapidement on va devoir parler des classes, les plans de construction des objets, qui expliquent comment
+
+Une réflexion sur la notion de compatibilité de type, présenter les deux grandes approches :
+* Compatibilité de type structurelle (comme TS par exemple)
+* Compatibilité *"déclarative"* (voir le bon terme)
+
 
 ## Partie 2 : Java
 * Surcharge de méthodes, de constructeurs
