@@ -35,6 +35,8 @@ Une réflexion sur la notion de compatibilité de type, présenter les deux gran
 Principe SOLID (en partie sans doute) :
 * **Liskov substitution** : Les sous classes ou implémentations doivent pouvoir être utilisé en lieu et place des super-classes et des interfaces.
 * **Interface degregation** : Le code ne doit pas dépendre de méthodes d'interfaces inutlisées. Cela milite pour avoir les interfaces les plus petites possibles (idéalement une seule méthode par interface).
+* **Dependency inversion** : Le code doit se référer à des abstractions, pas à des implémentations. Utiliser des List plutôt que des ArrayList dans les définitions. On instanciera une ArrayList dans le constructeur (ou via ses paramètres) et on l'affectera à l'attribut List par exemple.
+* **Single responsibility principle** : Une classe doit avoir une seule raison de changer, elle doit avoir une seule responsabilité. Plus facile à tester et à maintenir.
 * **
 
 
