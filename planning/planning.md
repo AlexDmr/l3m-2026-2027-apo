@@ -38,6 +38,10 @@ Rapidement on va devoir parler des classes, les plans de construction des objets
 
 ## Partie 3 : Style fonctionnel
 
+* Parcours de collection, tri, ... avec des lamda
+* Streams....
+
+
 
 
 _______________________
